@@ -13,6 +13,10 @@ router.get('/signup', (req, res) => {
     res.render('signup')
 })
 
+router.get('/picks', (req, res) => {
+    res.render('users/picks')
+})
+
 router.get('/user/:username', (req, res) => {
     User.find({ username : req.params.username }).then( users => {
         res.render('users/view', { users })
