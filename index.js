@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
-const parser = require('body-parser')
+const bodyParser = require('body-parser')
 const router = require('./controllers/index.js')
 
+app.use(bodyParser.urlencoded({ extended: true }))
 app.set('view engine', 'hbs')
 app.use(router)
 
