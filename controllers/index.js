@@ -20,12 +20,11 @@ router.get('/user/:username', (req, res) => {
 })
 
 router.post('/user', (req, res) => {
-    console.log(req.body)
     User.create({
         username: req.body.username,
         password: req.body.password
     }).then(user => {
-        res.redirect('/')})
+        res.redirect(`/user/${user.username}`)})
 })
 
 module.exports = router
