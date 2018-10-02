@@ -13,7 +13,7 @@ router.get('/signup', (req, res) => {
     res.render('signup')
 })
 
-router.get('/picks', (req, res) => {
+router.get('/user/:username/picks', (req, res) => {
     res.render('users/picks')
 })
 
