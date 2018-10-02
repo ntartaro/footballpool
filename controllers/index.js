@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/leaderboard', (req, res) => {
-    res.render('leaderboard/leaderboard')
+    res.render('leaderboard')
 })
 
 router.get('/signup', (req, res) => {
@@ -26,7 +26,8 @@ router.get('/user/:username', (req, res) => {
 router.post('/user', (req, res) => {
     User.create({
         username: req.body.username,
-        password: req.body.password
+        password: req.body.password,
+        team: req.body.team
     }).then(user => {
         res.redirect(`/user/${user.username}`)})
 })

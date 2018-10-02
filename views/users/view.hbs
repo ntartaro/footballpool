@@ -1,10 +1,11 @@
-{{#each users}}
-<h1>USERNAME: {{username}}</h1>
+{{users}}
+<h1>USERNAME: {{users.[0].username}}</h1>
+<h1>TEAM: {{users.[0].team}}</h1>
 
 
-<a href="/user/{{username}}/picks">CLICK HERE TO PICK NEAR</a>
+<a href="/user/{{users.[0].username}}/picks">CLICK HERE TO PICK NEAR</a>
 
 
 
 
-{{/each}}
+{{!-- {{/each}} --}}
