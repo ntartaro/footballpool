@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const User = require("../models/User")
+const Pick = require("../models/Pick")
 
 router.get('/', (req, res) => {
     res.render('index')
@@ -30,6 +31,17 @@ router.post('/user', (req, res) => {
         team: req.body.team
     }).then(user => {
         res.redirect(`/user/${user.username}`)})
+})
+
+router.post('/picks', (req, res) => {
+    console.log(req.body)
+    Pick.create({
+        gameOneChoice: req.body.gameOneChoice,
+        gameTwoChoice: req.body.gameTwoChoice,
+        tiebreaker: req.body.tiebreaker
+    }).then(user => {
+        res.redirect('/')
+    })
 })
 
 module.exports = router

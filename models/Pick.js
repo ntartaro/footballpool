@@ -3,22 +3,22 @@ const Schema = mongoose.Schema;
 
 const Pick = new Schema ({
     username: String,
-    gameOneChoice: Int,
-    gameTwoChoice: Int,
-    gameThreeChoice: Int,
-    gameFourChoice: Int,
-    gameFiveChoice: Int,
-    gameSixChoice: Int,
-    gameSevenChoice: Int,
-    gameEightChoice: Int,
-    gameNineChoice: Int,
-    gameTenChoice: Int,
-    gameElevenChoice: Int,
-    gameTwelveChoice: Int,
-    gameThirteenChoice: Int,
-    gameFourteenChoice: Int,
-    gameFifteenChoice: Int,
-    tiebreaker: Int
+    gameOneChoice: Number,
+    gameTwoChoice: Number,
+    gameThreeChoice: Number,
+    gameFourChoice: Number,
+    gameFiveChoice: Number,
+    gameSixChoice: Number,
+    gameSevenChoice: Number,
+    gameEightChoice: Number,
+    gameNineChoice: Number,
+    gameTenChoice: Number,
+    gameElevenChoice: Number,
+    gameTwelveChoice: Number,
+    gameThirteenChoice: Number,
+    gameFourteenChoice: Number,
+    gameFifteenChoice: Number,
+    tiebreaker: Number
 })
 
 module.exports = mongoose.model('Pick', Pick);
