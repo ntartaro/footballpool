@@ -2,13 +2,12 @@
 <h2>TEAM: {{user.[0].team}}</h2>
 <h2>Weekly Picks</h2>
 
-{{pick}}
-
+{{#if pick}}
 {{{picks pick.[0]}}}
-
-<br>
+{{/if}}
 
 <a href="/user/{{user.[0].username}}/picks">CLICK HERE TO PICK</a>
-
-
-
+<br>
+<a href="/user/{{user.[0].username}}/update">CLICK HERE TO UPDATE</a>
+<br>
+<a href="/user/{{user.[0].username}}/delete">DELETER</a>

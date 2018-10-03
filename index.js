@@ -5,6 +5,10 @@ const router = require('./controllers/index.js')
 const hbs = require('hbs')
 
 hbs.registerHelper('picks', function(pickModel) {
+    if (pickModel.flipper !== 1) {
+        return
+    }
+
     var teamOne = 'Broncos'
     if (pickModel.gameOneChoice == 1) {teamOne = 'Jets'} 
     var teamTwo = 'Packers'
@@ -34,9 +38,8 @@ hbs.registerHelper('picks', function(pickModel) {
     var teamFourteen = 'Redskins'
     if (pickModel.gameFourteenChoice == 1) {teamFourteen = 'Saints'} 
     var tiebreaker = pickModel.tiebreaker
-    console.log(pickModel)
+
     if (pickModel.flipper == 1) {
-        console.log('flipper 1')
     return `<ul>
     <li>${teamOne}</li>
     <li>${teamTwo}</li>

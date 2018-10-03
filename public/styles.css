@@ -1,20 +1,24 @@
-/* body {
+body {
     background-color: powderblue;
+    font-family: 'Oswald', sans-serif;
 }
 
 .banner {
-    background-color: grey;
-
-}
-
-.banner a {
-    float: left;
+    background-color: black;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
 }
 
 .logo {
-
+    font-size: 20px;
+    margin-left: 5px;
+    color: white;
 }
 
 .header-right {
-
-} */
+    padding: 15px;
+   
+}
