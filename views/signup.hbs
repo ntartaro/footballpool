@@ -1,15 +1,11 @@
-<section>
-  <h4>Create User:</h4>
-
-  <form action="/user" method="POST">
-    <p class="input-field">
-      <input type="username" name="username" placeholder="Username">
-    </p>
-    <p class="input-field">
-      <input type="password" name="password" placeholder="Password">
-    </p>
-    <p class="input-field">
-      <select name="team">
+<section class="create-user">
+  <p class="create-header">Create User :</p>
+  <form action="/user" class="signup-form" method="POST">
+      <input type="username" class="input-field" name="username" placeholder="Username">
+      <br>
+      <input type="password" class="input-field" name="password" placeholder="Password">
+      <br>
+      <select name="team" class="dropdown">
         <option value="cardinals">Arizona Cardinals</option>
         <option value="falcons">Atlanta Falcons</option>
         <option value="ravens">Baltimore Ravens</option>
@@ -43,9 +39,7 @@
         <option value="titans">Tennessee Titans</option>
         <option value="redskins">Washington Redskins</option>
       </select>
-    </p>
-    <p class="input-field">
-      <input type="submit" value="CLICK ME">
-    </p>
+      <br>
+      <input type="submit" class="submit-button" value="CLICK ME">
   </form>
 </section>
