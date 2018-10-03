@@ -17,8 +17,9 @@ const Pick = new Schema ({
     gameTwelveChoice: Number,
     gameThirteenChoice: Number,
     gameFourteenChoice: Number,
-    gameFifteenChoice: Number,
-    tiebreaker: Number
+    tiebreaker: Number,
+    weeklyPoints: Number,
+    flipper: Number
 })
 
 module.exports = mongoose.model('Pick', Pick);

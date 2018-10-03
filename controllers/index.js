@@ -7,7 +7,9 @@ router.get('/', (req, res) => {
 })
 
 router.get('/leaderboard', (req, res) => {
-    res.render('leaderboard')
+    Pick.find().then( pick => {
+       res.render('leaderboard', { pick }) 
+    })
 })
 
 router.get('/signup', (req, res) => {
@@ -15,12 +17,15 @@ router.get('/signup', (req, res) => {
 })
 
 router.get('/user/:username/picks', (req, res) => {
-    res.render('users/picks')
+    var username = req.params.username
+    res.render('users/picks', { username } )
 })
 
 router.get('/user/:username', (req, res) => {
-    User.find({ username : req.params.username }).then( users => {
-        res.render('users/view', { users })
+    User.find({ username : req.params.username }).then( user => {
+        Pick.find({}).then(pick => {
+            res.render('users/view', { pick, user})
+        }) 
     })
 })
 
@@ -33,14 +38,28 @@ router.post('/user', (req, res) => {
         res.redirect(`/user/${user.username}`)})
 })
 
-router.post('/picks', (req, res) => {
+router.post('/user/:username/picks', (req, res) => {
     console.log(req.body)
     Pick.create({
+        username: req.params.username,
         gameOneChoice: req.body.gameOneChoice,
         gameTwoChoice: req.body.gameTwoChoice,
-        tiebreaker: req.body.tiebreaker
+        gameThreeChoice: req.body.gameThreeChoice,
+        gameFourChoice: req.body.gameFourhoice,
+        gameFiveChoice: req.body.gameFiveChoice,
+        gameSixChoice: req.body.gameSixChoice,
+        gameSevenChoice: req.body.gameSevenChoice,
+        gameEightChoice: req.body.gameEightChoice,
+        gameNineChoice: req.body.gameNineChoice,
+        gameTenChoice: req.body.gameTenChoice,
+        gameElevenChoice: req.body.gameElevenChoice,
+        gameTwelveChoice: req.body.gameTwelveChoice,
+        gameThirteenChoice: req.body.gameThirteenChoice,
+        gameFourteenChoice: req.body.gameFourteenChoice,
+        tiebreaker: req.body.tiebreaker,
+        flipper: 1
     }).then(user => {
-        res.redirect('/')
+        res.redirect(`/user/${user.username}`)
     })
 })
 
