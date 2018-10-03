@@ -41,6 +41,7 @@ hbs.registerHelper('picks', function(pickModel) {
 
     if (pickModel.flipper == 1) {
     return `<ul>
+    <p class="results">1PM Games:</p>
     <li>${teamOne}</li>
     <li>${teamTwo}</li>
     <li>${teamThree}</li>
@@ -49,13 +50,20 @@ hbs.registerHelper('picks', function(pickModel) {
     <li>${teamSix}</li>
     <li>${teamSeven}</li>
     <li>${teamEight}</li>
+    <br>
+    <p class="results">4pm Games:</p>
     <li>${teamNine}</li>
     <li>${teamTen}</li>
     <li>${teamEleven}</li>
     <li>${teamTwelve}</li>
+    <br>
+    <p class="results">Sunday Night Game:</p>
     <li>${teamThirteen}</li>
+    <br>
+    <p class="results">Monday Night Game:</p>
     <li>${teamFourteen}</li>
-    <li>Monday Night Points: ${tiebreaker}</li>
+    <br>
+    <p class="results">Monday Night Points: ${tiebreaker}</p>
     </ul>`
     }
 })
