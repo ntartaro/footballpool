@@ -2,33 +2,29 @@ const router = require('express').Router()
 const User = require("../models/User")
 const Pick = require("../models/Pick")
 
+
+//INDEX
 router.get('/', (req, res) => {
     res.render('index')
 })
 
+//LEADERBOARD
 router.get('/leaderboard', (req, res) => {
     Pick.find().then( pick => {
        res.render('leaderboard', { pick }) 
     })
 })
 
+//LOGIN FORM
+router.get('/login', (req, res) => {
+    res.render('login')
+})
+
+//SIGNUP FORM
 router.get('/signup', (req, res) => {
     res.render('signup')
 })
-
-router.get('/user/:username/picks', (req, res) => {
-    var username = req.params.username
-    res.render('users/picks', { username } )
-})
-
-router.get('/user/:username', (req, res) => {
-    User.find({ username : req.params.username }).then( user => {
-        Pick.find({}).then(pick => {
-            res.render('users/view', { pick, user})
-        }) 
-    })
-})
-
+//SIGNUP CREATED
 router.post('/user', (req, res) => {
     User.create({
         username: req.body.username,
@@ -38,6 +34,12 @@ router.post('/user', (req, res) => {
         res.redirect(`/user/${user.username}`)})
 })
 
+//PICKS FORM
+router.get('/user/:username/picks', (req, res) => {
+    var username = req.params.username
+    res.render('users/picks', { username } )
+})
+//PICKS CREATED
 router.post('/user/:username/picks', (req, res) => {
     console.log(req.body)
     Pick.create({
@@ -60,6 +62,15 @@ router.post('/user/:username/picks', (req, res) => {
         flipper: 1
     }).then(user => {
         res.redirect(`/user/${user.username}`)
+    })
+})
+
+//USER PAGE
+router.get('/user/:username', (req, res) => {
+    User.find({ username : req.params.username }).then( user => {
+        Pick.find({username: req.params.username}).then(pick => {
+            res.render('users/view', { pick, user})
+        }) 
     })
 })
 
