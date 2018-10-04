@@ -75,4 +75,10 @@ hbs.registerHelper('picks', function(pickModel) {
     }
 })
 
-app.listen(3000, () => console.log('Up and running'))
+// app.listen(3000, () => console.log('Up and running'))
+
+     
+
+app.set('port', process.env.PORT || 3000)
+
+app.listen(app.get('port'), () => console.log('Up and running'))
