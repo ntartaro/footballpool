@@ -3,6 +3,9 @@ const app = express()
 const bodyParser = require('body-parser')
 const router = require('./controllers/index.js')
 const hbs = require('hbs')
+const methodOverride = require('method-override')
+
+app.use(methodOverride('_method'))
 
 hbs.registerHelper('picks', function(pickModel) {
     if (pickModel.flipper !== 1) {

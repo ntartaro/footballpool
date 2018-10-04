@@ -67,11 +67,21 @@ router.post('/user/:username/picks', (req, res) => {
 
 //USER PAGE
 router.get('/user/:username', (req, res) => {
-    User.find({ username : req.params.username }).then( user => {
+    User.find({ username : req.params.username }).then(user => {
         Pick.find({username: req.params.username}).then(pick => {
             res.render('users/view', { pick, user})
         }) 
     })
 })
+
+//DELETE BUTTON
+router.delete('/user/:username', (req, res) => {
+    Pick.findOneAndRemove({ username: req.params.username }).then(user => {
+        res.redirect(`/user/${user.username}`)
+    })
+})
+
+
+
 
 module.exports = router

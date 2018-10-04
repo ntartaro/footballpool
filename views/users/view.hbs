@@ -10,4 +10,8 @@
 <br>
 <a href="/user/{{user.[0].username}}/update">CLICK HERE TO UPDATE</a>
 <br>
-<a href="/user/{{user.[0].username}}/delete">DELETER</a>
+<form action="/user/{{user.[0].username}}?_method=DELETE" method="POST" >
+    <input type="submit" value="DELETE">
+</form>
+
+{{!-- <a href="/user/{{user.[0].username}}/delete">DELETER</a> --}}
