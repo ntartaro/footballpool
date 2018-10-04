@@ -10,8 +10,8 @@ router.get('/', (req, res) => {
 
 //LEADERBOARD
 router.get('/leaderboard', (req, res) => {
-    Pick.find().then( pick => {
-       res.render('leaderboard', { pick }) 
+    User.find().then( user => {
+       res.render('leaderboard', { user }) 
     })
 })
 
@@ -81,7 +81,14 @@ router.delete('/user/:username', (req, res) => {
     })
 })
 
+//UPDATE 
+router.get('/user/:username/picks/update', (req, res) => {
+    var username = req.params.username
+    res.render('users/update', { username } )
+})
 
 
+// //UPDATE BUTTON
+// router.put('/user/:username/picks')
 
 module.exports = router

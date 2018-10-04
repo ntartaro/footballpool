@@ -8,13 +8,17 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, button {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+}
+
+* {
+    box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -42,12 +46,16 @@ a {
 }
 
 
-/*---- styles ----*/
+
+
+
+
+
+/*-------- LAYOUT --------*/
 body {
     background-color: powderblue;
     font-family: 'Oswald', sans-serif;
 }
-
 
 .banner {
     background-color: black;
@@ -76,7 +84,7 @@ body {
     text-decoration: underline;
 }
 
-/* ----- INDEX PAGE ----- */
+/* --------- INDEX PAGE --------- */
 .welcome {
     text-align: center;
     margin-top: 100px;
@@ -101,26 +109,46 @@ body {
 }
 
 .signup-button {
+    display: inline-block;
     color: white;
     background-color: black;
     padding: 15px;
     margin: 10px;
     border-radius: 5px;
-    width: 70px;
+    width: 110px;
     text-align: center;
 }
 
 .login-button {
+    display: inline-block;
     color: white;
     background-color: black;
     padding: 15px;
     margin: 10px;
     border-radius: 5px;
-    width: 70px;
+    width: 110px;
     text-align: center;
 }
 
-/* ---- USER PAGE ---- */
+/* -------- USER PAGE -------- */
+.userWelcome {
+    font-size: 50px;
+    margin: 15px;
+}
+
+.userWelcome2 {
+    font-size: 35px;
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+.displayResults {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .results {
     padding: 5px;
 }
@@ -129,12 +157,47 @@ li {
     padding: 1.5px;
 }
 
-h2 {
-    margin: 10px;
-    padding: 10px;
+
+/* USER BUTTONS */
+.userButtons {
+    display: flex;
+    flex-direction: column;
 }
 
-/* ---- SIGNUP PAGE ---- */
+.picksButton {
+    border-radius: 7px;
+    margin-top: 12px;
+    margin-left: 20px;
+    width: 180px;
+    background-color: black;
+    color: white;
+    padding: 7px;
+    text-align: center;
+}
+
+.updateButton {
+    border-radius: 7px;
+    margin-top: 12px;
+    margin-left: 20px;
+    width: 180px;
+    background-color: black;
+    color: white;
+    padding: 7px;
+    text-align: center;
+}
+
+.deleteButton {
+    border-radius: 7px;
+    margin-top: 12px;
+    margin-left: 20px;
+    width: 180px;
+    font-weight: bold;
+    background-color: red;
+    color: black;
+    padding: 7px;
+}
+
+/* -------- SIGNUP PAGE -------- */
 .create-user {
     display: flex;
     flex-direction: column;
@@ -169,4 +232,44 @@ h2 {
 
 .submit-button {
     margin-top: 15px;
+}
+
+/* -------- PICK PAGE -------- */
+.picksBanner {
+    margin: 10px;
+    font-size: 50px;
+}
+
+.game {
+    font-size: 20px;
+    margin: 2px;
+}
+
+.onePMGames {
+    margin: 20px;
+}
+
+.fourPMGames {
+    margin: 20px;
+}
+
+.SNF {
+    margin: 20px;
+}
+
+.MNF {
+    margin: 20px;
+}
+
+.MNFPoints {
+    margin: 20px;
+}
+
+.picksSubmit {
+    margin-left: 40px;
+    background-color: white;
+    color: black;
+    height: 18px;
+    width: 120px;
+    text-align: center;
 }

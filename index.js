@@ -5,7 +5,11 @@ const router = require('./controllers/index.js')
 const hbs = require('hbs')
 const methodOverride = require('method-override')
 
+app.set('view engine', 'hbs')
 app.use(methodOverride('_method'))
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(router)
+app.use(express.static(__dirname + "/public"))
 
 hbs.registerHelper('picks', function(pickModel) {
     if (pickModel.flipper !== 1) {
@@ -70,10 +74,5 @@ hbs.registerHelper('picks', function(pickModel) {
     </ul>`
     }
 })
-
-app.use(bodyParser.urlencoded({ extended: true }))
-app.set('view engine', 'hbs')
-app.use(router)
-app.use(express.static(__dirname + "/public"))
 
 app.listen(3000, () => console.log('Up and running'))
