@@ -1,19 +1,29 @@
-<p class="userWelcome">Welcome, {{user.[0].username}}</p>
-
-<div class="displayResults">
-    <p class="userWelcome2">Your Picks For The Week:</p>
-    {{#if pick}}
-        {{{picks pick.[0]}}}
-    {{/if}}
+<div class="userWrapper">
+    <div class="userWrapper2">
+        <p class="userWelcome">Welcome, {{user.[0].username}}</p>
+        <div class="userButtons">
+            
+            {{#if pick.[0]}}
+            <a class="updateButton" href="/user/{{user.[0].username}}/picks/update">UPDATE YOUR PICKS</a>
+            <form action="/user/{{user.[0].username}}?_method=DELETE" method="POST" >
+                <button class="deleteButton" type="submit" value="DELETE">DELETE</button>
+            </form>
+            {{else}}
+            <a class="picksButton" href="/user/{{user.[0].username}}/picks">CAST YOUR PICKS</a>
+            {{/if}}
+            {{#if isadmin}}
+                <a class="picksButton" href="/supersecretadminpage">SUPER SECRET ADMIN BUTTON</a>
+            {{/if}}
+        </div>
+    </div>
+    <div class="displayResults">
+        <p class="userWelcome2">Your Picks For The Week:</p>
+        {{#if pick}}
+            {{{picks pick.[0]}}}
+        {{/if}}
+    </div>
 </div>
 
-
-<div class="userButtons">
-    <a class="picksButton" href="/user/{{user.[0].username}}/picks">CAST YOUR PICKS</a>
-    <a class="updateButton" href="/user/{{user.[0].username}}/picks/update">UPDATE YOUR PICKS</a>
-    <form action="/user/{{user.[0].username}}?_method=DELETE" method="POST" >
-        <button class="deleteButton" type="submit" value="DELETE">DELETE</button>
-    </form>
-</div>
+{{thisWeeksGame}}
 
 {{!-- <h2>TEAM: {{user.[0].team}}</h2> --}}

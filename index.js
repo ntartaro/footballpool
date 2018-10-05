@@ -12,10 +12,7 @@ app.use(router)
 app.use(express.static(__dirname + "/public"))
 
 hbs.registerHelper('picks', function(pickModel) {
-    if (pickModel.flipper !== 1) {
-        return
-    }
-
+    if (pickModel.flipper !== 1) { return }
     var teamOne = 'Broncos'
     if (pickModel.gameOneChoice == 1) {teamOne = 'Jets'} 
     var teamTwo = 'Packers'
@@ -70,14 +67,10 @@ hbs.registerHelper('picks', function(pickModel) {
     <p class="results">Monday Night Game:</p>
     <li>${teamFourteen}</li>
     <br>
-    <p class="results">Monday Night Points: ${tiebreaker}</p>
+    <p class="results">Monday Night Points: <li>${tiebreaker}</li></p>
     </ul>`
     }
 })
-
-// app.listen(3000, () => console.log('Up and running'))
-
-     
 
 app.set('port', process.env.PORT || 3000)
 
