@@ -6,13 +6,13 @@
             {{#if pick.[0]}}
             <a class="updateButton" href="/user/{{user.[0].username}}/picks/update">UPDATE YOUR PICKS</a>
             <form action="/user/{{user.[0].username}}?_method=DELETE" method="POST" >
-                <button class="deleteButton" type="submit" value="DELETE">DELETE</button>
+                <button class="deleteButton" type="submit" value="DELETE">DELETE YOUR PICKS</button>
             </form>
             {{else}}
             <a class="picksButton" href="/user/{{user.[0].username}}/picks">CAST YOUR PICKS</a>
             {{/if}}
             {{#if isadmin}}
-                <a class="picksButton" href="/supersecretadminpage">SUPER SECRET ADMIN BUTTON</a>
+                <a class="picksButton" href="/thisweekspicks">WEEKLY LINEUP</a>
             {{/if}}
         </div>
     </div>
@@ -24,6 +24,5 @@
     </div>
 </div>
 
-{{thisWeeksGame}}
-
-{{!-- <h2>TEAM: {{user.[0].team}}</h2> --}}
+{{!-- {{thisWeeksGame}}
+<h2>TEAM: {{user.[0].team}}</h2> --}}
