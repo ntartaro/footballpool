@@ -136,7 +136,7 @@ router.get('/thisweekspicks', (req, res) => {
     res.render('thisweekspicks')
 })
 //WEEKLY PICK UPDATE
-router.post('/supersecretadminpage', (req, res) => {
+router.post('/thisweekspicks', (req, res) => {
     ThisWeeksGames.create({
         gameOneFavorite: req.body.gameOneFavorite,
         gameOneUnderdog: req.body.gameOneUnderdog,
