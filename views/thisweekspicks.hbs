@@ -1,8 +1,8 @@
+<p class="lineupBanner">Weekly Lineup</p>
 
-<h1>SUPER SECRET ADMIN PAGE</h1>
-
-<form action="/supersecretadminpage" method="POST">
-<p>1PM Games</p>
+<form action="/thisweekspicks" method="POST">
+    <div class="onePMlineup">
+    <p>1PM Games</p>
     <input type="text" placeholder="Game One Away" name="gameOneUnderdog">
     <input type="text" placeholder="Game One Home" name="gameOneFavorite">
     <input type="number" step=".1" placeholder="Game One Spread" name="gameOneSpread">
@@ -34,7 +34,9 @@
     <input type="text" placeholder="Game Eight Away" name="gameEightUnderdog">
     <input type="text" placeholder="Game Eight Home" name="gameEightFavorite">
     <input type="number" step=".1" placeholder="Game Eight Spread" name="gameEightSpread">
+    </div>
     <br>
+    <div class="fourPMlineup">
     <p>4PM Games</p>
     <input type="text" placeholder="Game Nine Away" name="gameNineUnderdog">
     <input type="text" placeholder="Game Nine Home" name="gameNineFavorite">
@@ -51,16 +53,21 @@
     <input type="text" placeholder="Game Twelve Away" name="gameTwelveUnderdog">
     <input type="text" placeholder="Game Twelve Home" name="gameTwelveFavorite">
     <input type="number" step=".1" placeholder="Game Twelve Spread" name="gameTwelveSpread">
+    </div>
     <br>
+    <div class="SNFlineup">
     <p>Sunday Night Football</p>
     <input type="text" placeholder="Game Thirteen Away" name="gameThirteenUnderdog">
     <input type="text" placeholder="Game Thirteen Home" name="gameThirteenFavorite">
     <input type="number" step=".1" placeholder="Game Thirteen Spread" name="gameThirteenSpread">
+    </div>
     <br>
+    <div class="MNFlineup">
     <p>Monday Night Football</p>
     <input type="text" placeholder="Game Fourteen Away" name="gameFourteenUnderdog">
     <input type="text" placeholder="Game Fourteen Home" name="gameFourteenFavorite">
     <input type="number" step=".1" placeholder="Game Fourteen Spread" name="gameFourteenSpread">
+    </div>
     <br>
-    <button type="submit">SUBMIT</button>
+    <button class="lineupSubmit" type="submit">SUBMIT</button>
 </form>

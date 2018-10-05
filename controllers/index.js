@@ -3,9 +3,6 @@ const User = require("../models/User")
 const Pick = require("../models/Pick")
 const ThisWeeksGames = require("../models/ThisWeeksGames")
 
-const gameOneResult = 0
-const gameTwoResult = 1
-
 //INDEX
 router.get('/', (req, res) => {
     res.render('index')

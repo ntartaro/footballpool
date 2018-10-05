@@ -11,5 +11,6 @@ const User = new Schema ({
 module.exports = mongoose.model('User', User);
 
 /* 
-mascot for each team in ascii
+Future ideas
+-mascot/styling for each team
 */

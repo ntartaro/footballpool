@@ -46,11 +46,6 @@ a {
 }
 
 
-
-
-
-
-
 /*-------- LAYOUT --------*/
 body {
     background-color: powderblue;
@@ -284,4 +279,35 @@ li {
     height: 18px;
     width: 120px;
     text-align: center;
+}
+
+/* -------- WEEKLY LINEUP -------- */
+.lineupBanner {
+    margin: 10px;
+    font-size: 40px;
+}
+
+
+.onePMlineup {
+    margin: 10px;
+}
+
+.fourPMlineup {
+    margin: 10px;
+}
+
+.SNFlineup {
+    margin: 10px;
+}
+
+.MNFlineup {
+    margin: 10px;
+}
+
+.lineupSubmit {
+    background-color: black;
+    color: white;
+    margin-left: 20px;
+    padding: 5px;
+    border-radius: 6px;
 }
