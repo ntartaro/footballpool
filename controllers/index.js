@@ -18,8 +18,6 @@ router.get('/leaderboard', (req, res) => {
                 if (thisWeeksPicks && thisWeeksPicks.gameOneChoice == gameOneResult) {
                     totalpointsthisweek++
                 }
-                console.log(totalpointsthisweek)
-                
             })
         })
        res.render('leaderboard', { users }) 

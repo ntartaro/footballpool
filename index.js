@@ -13,30 +13,30 @@ app.use(express.static(__dirname + "/public"))
 
 hbs.registerHelper('picks', function(pickModel) {
     if (pickModel.flipper !== 1) { return }
-    var teamOne = 'Broncos'
-    if (pickModel.gameOneChoice == 1) {teamOne = 'Jets'} 
+    var teamOne = 'Ravens'
+    if (pickModel.gameOneChoice == 1) {teamOne = 'Browns'} 
     var teamTwo = 'Packers'
     if (pickModel.gameTwoChoice == 1) {teamTwo = 'Lions'} 
-    var teamThree = 'Giants'
-    if (pickModel.gameThreeChoice == 1) {teamThree = 'Panthers'} 
-    var teamFour = 'Titans'
-    if (pickModel.gameFourChoice == 1) {teamFour = 'Bills'} 
+    var teamThree = 'Jaguars'
+    if (pickModel.gameThreeChoice == 1) {teamThree = 'Chiefs'} 
+    var teamFour = 'Broncos'
+    if (pickModel.gameFourChoice == 1) {teamFour = 'Jets'} 
     var teamFive = 'Falcons'
     if (pickModel.gameFiveChoice == 1) {teamFive = 'Steelers'} 
-    var teamSix = 'Ravens'
-    if (pickModel.gameSixChoice == 1) {teamSix = 'Browns'}
-    var teamSeven = 'Dolphins'
-    if (pickModel.gameSevenChoice == 1) {teamSeven = 'Bengals'} 
-    var teamEight = 'Jaguars'
-    if (pickModel.gameSevenChoice == 1) {teamSeven = 'Chiefs'} 
+    var teamSix = 'Giants'
+    if (pickModel.gameSixChoice == 1) {teamSix = 'Panthers'}
+    var teamSeven = 'Titans'
+    if (pickModel.gameSevenChoice == 1) {teamSeven = 'Bills'} 
+    var teamEight = 'Dolphins'
+    if (pickModel.gameEightChoice == 1) {teamEight = 'Bengals'} 
     var teamNine = 'Raiders'
     if (pickModel.gameNineChoice == 1) {teamNine = 'Chargers'} 
     var teamTen = 'Vikings'
     if (pickModel.gameTenChoice == 1) {teamTen = 'Eagles'} 
-    var teamEleven = 'Rams'
-    if (pickModel.gameElevenChoice == 1) {teamEleven = 'Seahawks'} 
-    var teamTwelve = 'Cardinals'
-    if (pickModel.gameTwelveChoice == 1) {teamTwelve = '49ers'} 
+    var teamEleven = 'Cardinals'
+    if (pickModel.gameElevenChoice == 1) {teamEleven = '49ers'} 
+    var teamTwelve = 'Rams'
+    if (pickModel.gameTwelveChoice == 1) {teamTwelve = 'Seahawks'} 
     var teamThirteen = 'Cowboys'
     if (pickModel.gameThirteenChoice == 1) {teamThirteen = 'Texans'} 
     var teamFourteen = 'Redskins'
